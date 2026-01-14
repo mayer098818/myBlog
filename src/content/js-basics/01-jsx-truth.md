@@ -11,7 +11,7 @@ tags: [JavaScript, React, JSX]
 如果你刚开始学习 React，一定对 JSX 感到既熟悉又陌生。它看起来像是 HTML，却能够写在 JavaScript 里。你可能曾经写过像这样的代码：
 
 ```javascript
-const element = <h1>Hello, World!</h1>
+const element = <h1 className="hello">Hello, World!</h1>
 ```
 
 ## 什么是 JSX ?
@@ -21,7 +21,7 @@ JSX 是 JavaScript 的语法扩展，它允许你在 JavaScript 里写类似 HTM
 例如，上面的 JSX 代码会被转换成：
 
 ```javascript
-const element = React.createElement('h1', null, 'Hello, World!')
+const element = React.createElement('h1', { className: 'hello' }, 'Hello, World!')
 ```
 
 React.createElement 返回的是 React Element,如：
@@ -33,8 +33,8 @@ React.createElement 返回的是 React Element,如：
   key: null,
   ref: null,
   props: {
-    className: 'title',
-    children: 'Hello'
+    className: 'hello',
+    children: 'Hello, World!'
   },
   _owner: null,
   _store: {}
@@ -112,4 +112,17 @@ React 使用虚拟 DOM 而不是直接操作 HTML，这样可以：
 
 ## 总结
 
-JSX 是 React 开发中的核心概念，理解它的转换过程有助于更好地理解 React 的工作原理。通过 Babel 等工具，JSX 被转换为 `React.createElement` 调用，最终生成虚拟 DOM，实现高效的 UI 更新。
+JSX 本身不会被浏览器或 React 直接使用，它会在编译阶段被 Babel 转换为 `React.createElement` 调用，而该调用返回的普通 JavaScript 对象就是 React Element，用于描述 UI 结构。
+多个 React ELement 组成的树就是 Virtual DOM
+
+```php
+JSX
+ ↓ Babel（编译期）
+React.createElement(...)
+ ↓ 运行时
+React Element（JS 对象）
+ ↓ Reconciliation
+Fiber Node
+ ↓ Commit
+真实 DOM
+```
