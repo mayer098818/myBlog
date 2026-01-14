@@ -1,0 +1,77 @@
+.toc-container {
+  padding: 1.5rem;
+  background-color: hsl(0 0% 100%);
+  border: 1px solid hsl(214.3 31.8% 91.4%);
+  border-radius: 0.5rem;
+}
+
+.toc-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(222.2 47.4% 11.2%);
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toc-item {
+  margin: 0;
+}
+
+.toc-link {
+  display: block;
+  color: hsl(215.4 16.3% 46.9%);
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  transition: color 0.2s;
+  padding: 0.25rem 0;
+}
+
+.toc-link:hover {
+  color: hsl(221.2 83.2% 53.3%);
+}
+
+.toc-level-1 {
+  padding-left: 0;
+  font-weight: 500;
+}
+
+.toc-level-2 {
+  padding-left: 1rem;
+}
+
+.toc-level-3 {
+  padding-left: 2rem;
+  font-size: 0.8125rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .toc-container {
+    background-color: hsl(222.2 84% 4.9%);
+    border-color: hsl(217.2 32.6% 17.5%);
+  }
+
+  .toc-title {
+    color: hsl(210 40% 98%);
+  }
+
+  .toc-link {
+    color: hsl(215.4 16.3% 56.9%);
+  }
+
+  .toc-link:hover {
+    color: hsl(217.2 91.2% 59.8%);
+  }
+}
+

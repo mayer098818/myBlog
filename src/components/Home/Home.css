@@ -1,0 +1,131 @@
+.home-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(222.2 84% 4.9%);
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-emoji {
+  font-size: 2rem;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: hsl(215.4 16.3% 46.9%);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.series-section {
+  margin-top: 3rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(222.2 84% 4.9%);
+  margin: 0;
+}
+
+.view-all-link {
+  font-size: 0.875rem;
+  color: hsl(221.2 83.2% 53.3%);
+  text-decoration: none;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  display: inline-block;
+}
+
+.view-all-link:hover {
+  color: hsl(221.2 83.2% 53.3% / 0.8);
+  text-decoration: underline;
+}
+
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.empty-state {
+  text-align: center;
+  color: hsl(215.4 16.3% 46.9%);
+  padding: 3rem 1rem;
+  font-size: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-emoji {
+    font-size: 1.5rem;
+  }
+
+  .series-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hero-title {
+    color: hsl(210 40% 98%);
+  }
+
+  .hero-description {
+    color: hsl(215.4 16.3% 56.9%);
+  }
+
+  .section-title {
+    color: hsl(210 40% 98%);
+  }
+
+  .view-all-link {
+    color: hsl(217.2 91.2% 59.8%);
+  }
+
+  .view-all-link:hover {
+    color: hsl(217.2 91.2% 59.8% / 0.8);
+  }
+
+  .empty-state {
+    color: hsl(215.4 16.3% 56.9%);
+  }
+}
+

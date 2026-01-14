@@ -1,0 +1,154 @@
+.all-series-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-series-content {
+  flex: 1;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-series-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.all-series-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(222.2 84% 4.9%);
+  margin: 0 0 0.75rem 0;
+}
+
+.all-series-description {
+  font-size: 1.125rem;
+  color: hsl(215.4 16.3% 46.9%);
+  margin: 0;
+}
+
+.all-series-grid-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.all-series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1280px;
+  justify-content: center;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: hsl(215.4 16.3% 46.9%);
+  padding: 3rem 1rem;
+}
+
+/* Back button - fixed at bottom right */
+.back-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: hsl(221.2 83.2% 53.3%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+.back-button:hover {
+  background-color: hsl(221.2 83.2% 43.3%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .all-series-content {
+    padding: 1rem;
+  }
+
+  .all-series-title {
+    font-size: 2rem;
+  }
+
+  .all-series-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  
+  .all-series-grid .series-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .back-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .back-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .all-series-title {
+    color: hsl(210 40% 98%);
+  }
+
+  .all-series-description {
+    color: hsl(215.4 16.3% 56.9%);
+  }
+
+  .empty-state {
+    color: hsl(215.4 16.3% 56.9%);
+  }
+
+  .back-button {
+    background-color: hsl(221.2 83.2% 53.3%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .back-button:hover {
+    background-color: hsl(221.2 83.2% 43.3%);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
