@@ -1,6 +1,35 @@
 .markdown-viewer {
   line-height: 1.75;
   color: hsl(222.2 47.4% 11.2%);
+  font-size: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+  /* 用 CSS 计数器为标题自动编号 */
+  counter-reset: md-section;
+}
+
+.markdown-viewer h1,
+.markdown-viewer h2,
+.markdown-viewer h3 {
+  position: relative;
+}
+
+.markdown-viewer h2::before,
+.markdown-viewer h3::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  padding: 0.15rem 0.6rem;
+  margin-right: 0.5rem;
+  border-radius: 999px;
+  background-color: hsl(221.2 83.2% 53.3% / 0.06);
+  color: hsl(221.2 83.2% 35%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  content: '';
 }
 
 .markdown-viewer h2 {
@@ -10,6 +39,12 @@
   margin-bottom: 1rem;
   color: hsl(222.2 84% 4.9%);
   scroll-margin-top: 80px;
+  counter-increment: md-section;
+  counter-reset: md-subsection;
+}
+
+.markdown-viewer h2::before {
+  content: counter(md-section) '.';
 }
 
 .markdown-viewer h3 {
@@ -19,6 +54,11 @@
   margin-bottom: 0.75rem;
   color: hsl(222.2 84% 4.9%);
   scroll-margin-top: 80px;
+  counter-increment: md-subsection;
+}
+
+.markdown-viewer h3::before {
+  content: counter(md-section) '.' counter(md-subsection);
 }
 
 .markdown-viewer h4 {
@@ -31,6 +71,10 @@
 
 .markdown-viewer p {
   margin-bottom: 1rem;
+}
+
+.markdown-viewer strong {
+  font-weight: 600;
 }
 
 .markdown-viewer ul,
@@ -59,6 +103,16 @@
   overflow-x: auto;
   margin: 1.5rem 0;
   border: 1px solid hsl(214.3 31.8% 91.4%);
+  font-size: 0.9rem;
+}
+
+.markdown-viewer pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.markdown-viewer pre::-webkit-scrollbar-thumb {
+  background-color: hsl(214.3 31.8% 81.4%);
+  border-radius: 999px;
 }
 
 .markdown-viewer pre code {
@@ -73,6 +127,8 @@
   margin: 1.5rem 0;
   color: hsl(215.4 16.3% 46.9%);
   font-style: italic;
+  background-color: hsl(210 40% 98%);
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .markdown-viewer a {
