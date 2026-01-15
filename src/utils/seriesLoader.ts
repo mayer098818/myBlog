@@ -43,20 +43,22 @@ function getFallbackSeries(): Series[] {
       id: 'web-auth',
       title: 'Web 驗證入門',
       description: '從零開始學習 Web 身份驗證',
-      icon: '📄'
+      icon: '📄',
+      articleCount: 0
     },
     {
       id: 'http-basics',
       title: 'HTTP 新手村',
       description: 'HTTP 協議基礎知識',
-      icon: '📄'
+      icon: '📄',
+      articleCount: 0
     },
     {
-      id: 'js-basics',
-      title: 'JavaScript 基礎入門系列',
-      description: 'JavaScript 基礎知識',
-      icon: '📄'
+      id: 'react-basics',
+      title: 'React 基礎',
+      description: 'React 基礎知識',
+      icon: '📄',
+      articleCount: 0
     }
   ]
 }
-

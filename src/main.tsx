@@ -10,7 +10,8 @@ window.Buffer = Buffer
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* Keep router base in sync with Vite `base` (import.meta.env.BASE_URL) */}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>

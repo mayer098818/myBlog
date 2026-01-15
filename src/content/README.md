@@ -6,7 +6,7 @@
 
 ```
 content/
-├── js-basics/          # JavaScript 基础系列
+├── react-basics/       # React 基础系列
 │   ├── 01-jsx-truth.md
 │   └── 02-react-components.md
 ├── http-basics/        # HTTP 基础系列
